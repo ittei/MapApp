@@ -110,8 +110,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         }
         annotationView.image = info[.editedImage] as? UIImage
         
-        
-        
     }
     
 }
