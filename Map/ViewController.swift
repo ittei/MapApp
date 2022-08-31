@@ -54,7 +54,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
             annotation.coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
             let pin = MapAnnotationSetting()
             
-            //
+            //カメラロール
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let picker = UIImagePickerController()
                 picker.sourceType = .photoLibrary
