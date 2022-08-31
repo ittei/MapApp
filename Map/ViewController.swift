@@ -71,7 +71,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
             // 画像をセットできる
 //            pin.pinImage = UIImage(named: "ra-men")
             pin.pinImage = UIImagePickerController()
-            // ピンを立てる
             pin.coordinate = coordinate
             self.mapView.addAnnotation(pin)
         }
