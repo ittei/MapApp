@@ -104,11 +104,18 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
      }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if annotationView == nil {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-        }
-        annotationView.image = info[.editedImage] as? UIImage
         
+        
+//        if annotationView == nil {
+//            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            
+            
+//        }
+    
+    
+//        annotationView.image = info[.editedImage] as? UIImage
+        
+    
     }
     
 }
