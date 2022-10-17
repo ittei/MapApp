@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D911C8F128E3262400279886 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911C8F028E3262400279886 /* AccountVC.swift */; };
 		D911C8F728E3280900279886 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D911C8F628E3280700279886 /* GoogleService-Info.plist */; };
-		D911C8FB28E3293A00279886 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D911C8FA28E3293A00279886 /* RegisterVC.swift */; };
 		D97F423628CC5DB400848A53 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = D97F423528CC5DB400848A53 /* FirebaseAnalytics */; };
 		D9B69848286321B800C746AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B69847286321B800C746AB /* AppDelegate.swift */; };
 		D9B6984A286321B800C746AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B69849286321B800C746AB /* SceneDelegate.swift */; };
@@ -20,6 +18,7 @@
 		D9B6985F286321BD00C746AB /* MapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6985E286321BD00C746AB /* MapTests.swift */; };
 		D9B69869286321BE00C746AB /* MapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B69868286321BE00C746AB /* MapUITests.swift */; };
 		D9B6986B286321BE00C746AB /* MapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6986A286321BE00C746AB /* MapUITestsLaunchTests.swift */; };
+		D9E07C0A28FC0694009B00A7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E07C0928FC0694009B00A7 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D911C8F028E3262400279886 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		D911C8F628E3280700279886 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D911C8FA28E3293A00279886 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		D9B69844286321B800C746AB /* Map.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Map.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B69847286321B800C746AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9B69849286321B800C746AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +53,7 @@
 		D9B69864286321BE00C746AB /* MapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9B69868286321BE00C746AB /* MapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUITests.swift; sourceTree = "<group>"; };
 		D9B6986A286321BE00C746AB /* MapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D9E07C0928FC0694009B00A7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,12 +109,11 @@
 				D9B69847286321B800C746AB /* AppDelegate.swift */,
 				D9B69849286321B800C746AB /* SceneDelegate.swift */,
 				D9B6984B286321B800C746AB /* ViewController.swift */,
+				D9E07C0928FC0694009B00A7 /* RegisterViewController.swift */,
 				D9B6984D286321B800C746AB /* Main.storyboard */,
 				D9B69850286321BD00C746AB /* Assets.xcassets */,
 				D9B69852286321BD00C746AB /* LaunchScreen.storyboard */,
 				D9B69855286321BD00C746AB /* Info.plist */,
-				D911C8F028E3262400279886 /* AccountVC.swift */,
-				D911C8FA28E3293A00279886 /* RegisterVC.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -276,11 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D911C8F128E3262400279886 /* AccountVC.swift in Sources */,
 				D9B6984C286321B800C746AB /* ViewController.swift in Sources */,
 				D9B69848286321B800C746AB /* AppDelegate.swift in Sources */,
 				D9B6984A286321B800C746AB /* SceneDelegate.swift in Sources */,
-				D911C8FB28E3293A00279886 /* RegisterVC.swift in Sources */,
+				D9E07C0A28FC0694009B00A7 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
