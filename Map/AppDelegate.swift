@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import FirebaseCore
+import FirebaseStorage
 import FirebaseAuth
       
 @main
