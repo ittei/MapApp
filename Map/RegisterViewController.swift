@@ -62,11 +62,11 @@ class RegisterViewController: UIViewController {
             let password = passwordForm.text
             
         if email == "" {
-            let okAlertVC = UIAlertController(title: "エラー", message: "入力してください", preferredStyle: .alert)
+            let okAlertVC = UIAlertController(title: "エラー", message: "情報を入力してください", preferredStyle: .alert)
             okAlertVC.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(okAlertVC, animated: true, completion: nil)
         } else if password == "" {
-            let okAlertVC = UIAlertController(title: "エラー", message: "入力してください", preferredStyle: .alert)
+            let okAlertVC = UIAlertController(title: "エラー", message: "情報を入力してください", preferredStyle: .alert)
             okAlertVC.addAction(UIAlertAction(title: "OK", style: .default))
             self.present(okAlertVC, animated: true, completion: nil)
         } else {

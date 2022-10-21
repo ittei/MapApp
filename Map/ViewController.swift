@@ -10,14 +10,15 @@ import MapKit
 import CoreLocation
 
 class MapAnnotationSetting: MKPointAnnotation {
-//    var pinImage: UIImage?
-    var pinImage: UIImagePickerController?
+    var pinImage: UIImage?
+//    var pinImage: UIImagePickerController?
 }
 
 class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     var locationManager: CLLocationManager!
+    var location: CGPoint!
     
     override func viewDidLoad() {
     
@@ -31,7 +32,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         mapView.addAnnotation(userLocation)
         mapView.delegate = self
     }
-    
     func locationManager(_ manager: CLLocationManager,didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined:
@@ -47,32 +47,32 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
     }
     
     @IBAction func pressMap(_ sender: UILongPressGestureRecognizer) {
-        let location:CGPoint = sender.location(in: mapView)
+        location = sender.location(in: mapView)
         if (sender.state == UIGestureRecognizer.State.ended) {
-            let mapPoint:CLLocationCoordinate2D = mapView.convert(location,toCoordinateFrom: mapView)
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
-            let pin = MapAnnotationSetting()
-            
-            //カメラロール
-            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-                let picker = UIImagePickerController()
-                picker.sourceType = .photoLibrary
-                picker.delegate = self
-                
-                picker.allowsEditing = true
-                
-                present(picker, animated: true, completion: nil)
-            }
-            //
-            
-            // 用意したデータをセット
-            let coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
-            // 画像をセットできる
-//            pin.pinImage = UIImage(named: "ra-men")
-            pin.pinImage = UIImagePickerController()
-            pin.coordinate = coordinate
-            self.mapView.addAnnotation(pin)
+//            let mapPoint:CLLocationCoordinate2D = mapView.convert(location,toCoordinateFrom: mapView)
+//            let annotation = MKPointAnnotation()
+//            annotation.coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
+//            let pin = MapAnnotationSetting()
+//
+//            //カメラロール
+//            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+//                let picker = UIImagePickerController()
+//                picker.sourceType = .photoLibrary
+//                picker.delegate = self
+//
+//                picker.allowsEditing = true
+//
+//                present(picker, animated: true, completion: nil)
+//            }
+//            //
+//
+//            // 用意したデータをセット
+//            let coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
+//            // 画像をセットできる
+////            pin.pinImage = UIImage(named: "ra-men")
+//            pin.pinImage = UIImagePickerController()
+//            pin.coordinate = coordinate
+//            self.mapView.addAnnotation(pin)
         }
     }
     
@@ -89,16 +89,15 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
              annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
          }
 
-         // ピンにセットした画像をつける
-//         if let pin = annotation as? MapAnnotationSetting {
-//             if let pinImage = pin.pinImage {
-//                annotationView.image = pinImage
-//                annotationView.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
-//             }
-//         }
-//         annotationView.annotation = annotation
-//         // ピンをタップした時の吹き出しの表示
-//         annotationView.canShowCallout = true
+         if let pin = annotation as? MapAnnotationSetting {
+             if let pinImage = pin.pinImage {
+                annotationView.image = pinImage
+                annotationView.bounds = CGRect(x: 0, y: 0, width: 80, height: 80)
+             }
+         }
+         annotationView.annotation = annotation
+         // ピンをタップした時の吹き出しの表示
+         annotationView.canShowCallout = true
 
          return annotationView
      }
@@ -109,14 +108,38 @@ class ViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelega
         
         dismiss(animated: true, completion: nil)
         
+        //
+        let mapPoint:CLLocationCoordinate2D = mapView.convert(location,toCoordinateFrom: mapView)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
+        let pin = MapAnnotationSetting()
+        
+        //カメラロール
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let picker = UIImagePickerController()
+            picker.sourceType = .photoLibrary
+            picker.delegate = self
+            
+            picker.allowsEditing = true
+            
+            present(picker, animated: true, completion: nil)
+        }
+        //
+        
+        // 用意したデータをセット
+        let coordinate = CLLocationCoordinate2DMake(mapPoint.latitude, mapPoint.longitude)
+        pin.pinImage = UIImage()
+        pin.coordinate = coordinate
+        self.mapView.addAnnotation(pin)
+        //
         
 //        if annotationView == nil {
 //            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
-            
-            
+//
+//
 //        }
-    
-    
+//
+//
 //        annotationView.image = info[.editedImage] as? UIImage
         
     
